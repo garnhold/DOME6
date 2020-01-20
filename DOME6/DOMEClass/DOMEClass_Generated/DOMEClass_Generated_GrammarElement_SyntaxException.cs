@@ -52,12 +52,10 @@ namespace DOME
 
             code.Write("public partial class ?TYPE : ?BASE_TYPE", delegate() {
                 code.Write("private int line;");
-                code.Write("private int column;");
                 code.Write("private string base_message;");
 
-                code.Write("public ?TYPE(int l, int c, string m) : base()", delegate() {
+                code.Write("public ?TYPE(int l, string m) : base()", delegate() {
                     code.Write("line = l;");
-                    code.Write("column = c;");
                     code.Write("base_message = m;");
                 });
 
@@ -65,16 +63,12 @@ namespace DOME
                     code.Write("return line;");
                 });
 
-                code.Write("public int GetColumn()", delegate() {
-                    code.Write("return column;");
-                });
-
                 code.Write("public string GetBaseMessage()", delegate() {
                     code.Write("return base_message;");
                 });
 
                 code.Write("public string GetMessage()", delegate() {
-                    code.Write("return \"(\" + line + \", \" + column + \")\" +  base_message;");
+                    code.Write("return \"(\" + line + \")\" +  base_message;");
                 });
             });
         }

@@ -43,8 +43,8 @@ namespace DOME
                 code.Write("private ?TYPE()", delegate() {
                 });
 
-                code.Write("public override void SyntaxError(IRecognizer recognizer, IToken offendingSymbol, int line, int column, string msg, RecognitionException e)", delegate() {
-                    code.Write("throw new ?EXCEPTION(line, column, msg);");
+                code.Write("public override void SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)", delegate() {
+                    code.Write("throw new ?EXCEPTION(line, msg);");
                 });
             });
         }

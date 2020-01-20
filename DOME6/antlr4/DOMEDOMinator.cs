@@ -2,7 +2,7 @@
 //-------------------------------
 //--Generated Code File----------
 //-------------------------------
-//Date: January 19 2020 22:20:50 -08:00
+//Date: January 19 2020 22:39:32 -08:00
 
 using System;
 using System.IO;
@@ -3517,8 +3517,8 @@ namespace DOME
 		private DOMESyntaxExceptionThrower()
 		{
 		}
-
-        public override void SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
+		
+		public override void SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e)
 		{
 			throw new DOMESyntaxException(line, msg);
 		}
