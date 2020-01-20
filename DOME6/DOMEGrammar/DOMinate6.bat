@@ -1,1 +1,0 @@
-DOME6 -g "DOME" -e "DOMElement" -o "C:/Users/Garrett/Documents/Visual Studio 2013/Projects/DOME6/DOME6/antlr4/"
