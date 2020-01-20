@@ -19,7 +19,7 @@ namespace DOME
         {
             try
             {
-                DOMElement_GrammarDefinition.GenerateDOM(CmdUtilities.CreateCmdObject<DOMESettings>(args));
+                DOMElement_GrammarDefinition.GenerateDOM(CmdUtilities.CreateConfiguration<DOMESettings>(args));
             }
             catch (DOMESyntaxException ex)
             {
