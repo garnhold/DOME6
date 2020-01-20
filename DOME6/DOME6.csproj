@@ -60,6 +60,9 @@
     <Reference Include="Antlr4.Runtime">
       <HintPath>..\..\CrunchyBox\CrunchyRecipe\bin\Release\Antlr4.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="CrunchySodium">
+      <HintPath>..\..\CrunchyBox\CrunchySodium\bin\Release\CrunchySodium.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="antlr4\DOMEBaseVisitor.cs" />
