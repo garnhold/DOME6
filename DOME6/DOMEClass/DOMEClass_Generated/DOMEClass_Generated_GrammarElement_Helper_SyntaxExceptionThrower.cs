@@ -20,7 +20,7 @@ namespace DOME
 
         public DOMEClass_Generated_GrammarElement_Helper_SyntaxExceptionThrower(DOMElement_GrammarDefinition g) : base(g)
         {
-            get_type_name = new OperationCache<string>(delegate() {
+            get_type_name = new OperationCache<string>("get_type_name", delegate() {
                 return GetGrammarDefinition().GetGrammarName() + "SyntaxExceptionThrower";
             });
         }

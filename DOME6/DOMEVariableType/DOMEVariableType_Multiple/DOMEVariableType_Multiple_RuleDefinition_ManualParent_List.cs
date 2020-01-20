@@ -16,7 +16,7 @@ namespace DOME
 
         public DOMEVariableType_Multiple_RuleDefinition_ManualParent_List(DOMEClass p, DOMEVariableTypeConcept t) : base(p, t)
         {
-            get_type_name = new OperationCache<string>(delegate() {
+            get_type_name = new OperationCache<string>("get_type_name", delegate() {
                 return CSLine.Single("List<?INNER_TYPE>",
                     "INNER_TYPE", GetTypeConcept().GetStoreTypeName()
                 );

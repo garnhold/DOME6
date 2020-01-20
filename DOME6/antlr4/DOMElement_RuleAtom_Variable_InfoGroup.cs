@@ -21,7 +21,7 @@ namespace DOME
 
         partial void OnConstructor()
         {
-            get_variable_context = new OperationCache<DOMEContext>(delegate() {
+            get_variable_context = new OperationCache<DOMEContext>("get_variable_context", delegate() {
                 DOMEContext variable_context;
 
                 if(this.GetTopicalChildren<DOMElement_RuleAtom_Variable>()
@@ -32,7 +32,7 @@ namespace DOME
                 return null;
             });
 
-            get_default_variable_type_context = new OperationCache<DOMEVariableTypeConcept>(delegate() {
+            get_default_variable_type_context = new OperationCache<DOMEVariableTypeConcept>("get_default_variable_type_context", delegate() {
                 DOMEVariableTypeConcept variable_type;
 
                 if (this.GetTopicalChildren<DOMElement_RuleAtom_Variable>()

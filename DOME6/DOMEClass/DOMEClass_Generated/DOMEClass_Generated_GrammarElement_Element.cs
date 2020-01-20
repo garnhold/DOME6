@@ -21,11 +21,11 @@ namespace DOME
 
         public DOMEClass_Generated_GrammarElement_Element(DOMElement_GrammarDefinition g) : base(g)
         {
-            get_type_name = new OperationCache<string>(delegate() {
+            get_type_name = new OperationCache<string>("get_type_name", delegate() {
                 return GetGrammarDefinition().GetSettings().GetElementName();
             });
 
-            get_base_type = new OperationCache<DOMEClass>(delegate() {
+            get_base_type = new OperationCache<DOMEClass>("get_base_type", delegate() {
                 return GetGrammarDefinition()
                     .GetClassGeneric(
                         GetGrammarDefinition().GetSettings().GetElementBaseTypeName()

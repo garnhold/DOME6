@@ -24,7 +24,7 @@ namespace DOME
 
         partial void OnConstructor()
         {
-            resolve = new OperationCache<DOMElement_TokenDefinition>(delegate() {
+            resolve = new OperationCache<DOMElement_TokenDefinition>("resolve", delegate() {
                 return GetGrammarDefinition().GetDefinitions()
                     .Convert<DOMElement_Definition, DOMElement_Definition_TokenDefinition>()
                     .Convert<DOMElement_Definition_TokenDefinition, DOMElement_TokenDefinition>(d => d.GetTokenDefinition())

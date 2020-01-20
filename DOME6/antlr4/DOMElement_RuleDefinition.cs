@@ -89,34 +89,34 @@ namespace DOME
 
         public DOMElement_RuleDefinition()
         {
-            get_type_name = new OperationCache<string>(delegate() {
+            get_type_name = new OperationCache<string>("get_type_name", delegate() {
                 return this.ConvertInfoValue<string>("name",
                     () => GetBaseType().CreateDerivedTypeName(GetRuleId().StyleAsClassName()),
                     s => s
                 );
             });
 
-            get_store_type_name = new OperationCache<string>(delegate() {
+            get_store_type_name = new OperationCache<string>("get_store_type_name", delegate() {
                 return this.ConvertInfoValue<string>("store_type",
                     () => GetTypeName(),
                     s => s
                 );
             });
 
-            get_retrieve_type_name = new OperationCache<string>(delegate() {
+            get_retrieve_type_name = new OperationCache<string>("get_retrieve_type_name", delegate() {
                 return this.ConvertInfoValue<string>("retrieve_type",
                     () => GetStoreTypeName(),
                     s => s
                 );
             });
 
-            get_as_single = new OperationCache<DOMEVariableType>(delegate() {
+            get_as_single = new OperationCache<DOMEVariableType>("get_as_single", delegate() {
                 return GetGrammarDefinition().GetSettings().GetVariableTypeCreator()
                     .GetRuleDefinitionSingleFactory()
                     .Create(GetGrammarDefinition().GetElement(), this);
             });
 
-            get_as_multiple = new OperationCache<DOMEVariableType>(delegate() {
+            get_as_multiple = new OperationCache<DOMEVariableType>("get_as_multiple", delegate() {
                 DOMEVariableTypeCreator creator = GetGrammarDefinition().GetSettings().GetVariableTypeCreator();
 
                 switch (this.GetInfoValue("multiple_type"))
@@ -135,21 +135,21 @@ namespace DOME
                 }
             });
 
-            get_base_type = new OperationCache<DOMEClass>(delegate() {
+            get_base_type = new OperationCache<DOMEClass>("get_base_type", delegate() {
                 return this.ConvertInfoValue<DOMEClass>("base_type",
                     () => GetDefaultBaseType(),
                     s => GetGrammarDefinition().GetClassGeneric(s)
                 );
             });
 
-            get_context_name = new OperationCache<string>(delegate() {
+            get_context_name = new OperationCache<string>("get_context_name", delegate() {
                 return CSLine.Single("?PARSER.?CONTEXT_ID!Context",
                     "PARSER", GetGrammarDefinition().GetParserName(),
                     "CONTEXT_ID", GetContextId().StyleAsCapitalizedEntity()
                 );
             });
 
-            get_context_default_variable_name = new OperationCache<string>(delegate() {
+            get_context_default_variable_name = new OperationCache<string>("get_context_default", delegate() {
                 return this.ConvertInfoValue("default_name",
                     () => this.ConvertInfoValue("store_type",
                         () => GetContextId().StyleAsVariableName(),
@@ -159,7 +159,7 @@ namespace DOME
                 );
             });
 
-            get_info_settings = new OperationCache<LookupBackedSet<string, string>>(delegate() {
+            get_info_settings = new OperationCache<LookupBackedSet<string, string>>("get_info_settings", delegate() {
                 return GetInfo().CreateBackedSet(DEFAULT_INFO_VALUES);
             });
         }

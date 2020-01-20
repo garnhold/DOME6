@@ -25,11 +25,11 @@ namespace DOME
             name = n;
             grammar_definition = g;
 
-            get_as_single = new OperationCache<DOMEVariableType>(delegate() {
+            get_as_single = new OperationCache<DOMEVariableType>("get_as_single", delegate() {
                 return new DOMEVariableType_Single_Primitive(this);
             });
 
-            get_as_collection = new OperationCache<DOMEVariableType>(delegate() {
+            get_as_collection = new OperationCache<DOMEVariableType>("get_as_collection", delegate() {
                 return new DOMEVariableType_Multiple_Primitive_List(this);
             });
         }

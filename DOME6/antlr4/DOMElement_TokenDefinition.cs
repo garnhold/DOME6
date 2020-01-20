@@ -29,11 +29,11 @@ namespace DOME
 
         partial void OnConstructor()
         {
-            get_context_default_variable_name = new OperationCache<string>(delegate() {
+            get_context_default_variable_name = new OperationCache<string>("get_context_default_variable_name", delegate() {
                 return GetContextId().StyleAsVariableName();
             });
 
-            get_info_settings = new OperationCache<LookupBackedSet<string, string>>(delegate() {
+            get_info_settings = new OperationCache<LookupBackedSet<string, string>>("get_info_settings", delegate() {
                 return GetInfo().CreateBackedSet(DEFAULT_INFO_VALUES);
             });
         }

@@ -43,7 +43,7 @@ namespace DOME
 
         public DOMEVariableType_Single_RuleDefinition_AutoParent(DOMEClass p, DOMEVariableTypeConcept t) : base(p, t)
         {
-            get_type_name = new OperationCache<string>(delegate() {
+            get_type_name = new OperationCache<string>("get_type_name", delegate() {
                 return CSLine.Single("HoldingSingle<?PARENT_TYPE, ?INNER_TYPE>",
                     "PARENT_TYPE", GetParentType().GetTypeName(),
                     "INNER_TYPE", GetTypeConcept().GetStoreTypeName()

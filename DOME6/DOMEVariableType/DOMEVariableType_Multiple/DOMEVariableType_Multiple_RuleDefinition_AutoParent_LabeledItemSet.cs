@@ -28,7 +28,7 @@ namespace DOME
         {
             label_type_concept = l;
 
-            get_type_name = new OperationCache<string>(delegate() {
+            get_type_name = new OperationCache<string>("get_type_name", delegate() {
                 return CSLine.Single("HoldingLabeledItemSet<?PARENT_TYPE, ?LABEL_TYPE, ?INNER_TYPE>",
                     "PARENT_TYPE", GetParentType().GetTypeName(),
                     "LABEL_TYPE", GetLabelTypeConcept().GetStoreTypeName(),

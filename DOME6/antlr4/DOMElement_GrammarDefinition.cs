@@ -135,27 +135,27 @@ namespace DOME
             syntax_exception = new DOMEClass_Generated_GrammarElement_SyntaxException(this);
             syntax_exception_thrower = new DOMEClass_Generated_GrammarElement_Helper_SyntaxExceptionThrower(this);
 
-            get_parser_name = new OperationCache<string>(delegate() {
+            get_parser_name = new OperationCache<string>("get_parser_name", delegate() {
                 return GetGrammarName() + "Parser";
             });
 
-            get_lexer_name = new OperationCache<string>(delegate() {
+            get_lexer_name = new OperationCache<string>("get_lexer_name", delegate() {
                 return GetGrammarName() + "Lexer";
             });
 
-            get_visitor_name = new OperationCache<string>(delegate() {
+            get_visitor_name = new OperationCache<string>("get_visitor_name", delegate() {
                 return GetGrammarName() + "BaseVisitor";
             });
 
-            get_main_filename = new OperationCache<string>(delegate() {
+            get_main_filename = new OperationCache<string>("get_main_filename", delegate() {
                 return GetGrammarName() + "DOMinator.cs";
             });
 
-            get_class_generic = new OperationCache<DOMEClass_Generic, string>(delegate(string name) {
+            get_class_generic = new OperationCache<DOMEClass_Generic, string>("get_class_generic", delegate(string name) {
                 return new DOMEClass_Generic(this, name);
             });
 
-            get_type_concept = new OperationCache<DOMEVariableTypeConcept, string>(delegate(string name) {
+            get_type_concept = new OperationCache<DOMEVariableTypeConcept, string>("get_type_concept", delegate(string name) {
                 return Types.GetFilteredTypes(
                     Filterer_Type.CanBeTreatedAs<DOMEVariableTypeConcept>(),
                     Filterer_Type.HasCustomLabeledAttributeOfType<DOMEVariableTypeConceptAttribute>(name, true)

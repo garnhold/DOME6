@@ -16,7 +16,7 @@ namespace DOME
 
         public DOMEVariableType_Multiple_Primitive_List(DOMEVariableTypeConcept t) : base(t)
         {
-            get_type_name = new OperationCache<string>(delegate() {
+            get_type_name = new OperationCache<string>("get_type_name", delegate() {
                 return CSLine.Single("List<?INNER_TYPE>",
                     "INNER_TYPE", GetTypeConcept().GetStoreTypeName()
                 );

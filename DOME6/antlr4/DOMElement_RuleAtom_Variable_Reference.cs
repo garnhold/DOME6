@@ -22,7 +22,7 @@ namespace DOME
 
         public DOMElement_RuleAtom_Variable_Reference()
         {
-            get_default_variable_type_context = new OperationCache<DOMEVariableTypeConcept>(delegate() {
+            get_default_variable_type_context = new OperationCache<DOMEVariableTypeConcept>("get_default_variable_type_context", delegate() {
                 DOMEVariableTypeConcept type = GetDefaultVariableTypeInternal();
                 HasInfo has_info = type as HasInfo;
 

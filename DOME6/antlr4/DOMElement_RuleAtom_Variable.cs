@@ -39,25 +39,25 @@ namespace DOME
 
         public DOMElement_RuleAtom_Variable()
         {
-            get_variable_name = new OperationCache<string>(delegate() {
+            get_variable_name = new OperationCache<string>("get_variable_name", delegate() {
                 return this.ConvertInfoValue<string>("name",
                     () => GetVariableDefaultName(),
                     s => s
                 );
             });
 
-            get_variable_type_context = new OperationCache<DOMEVariableTypeConcept>(delegate() {
+            get_variable_type_context = new OperationCache<DOMEVariableTypeConcept>("get_variable_type_context", delegate() {
                 return this.ConvertInfoValue<DOMEVariableTypeConcept>("type",
                     () => GetDefaultVariableTypeContext(),
                     s => GetGrammarDefinition().GetTypeConcept(s)
                 );
             });
 
-            get_variable_type_container = new OperationCache<DOMEVariableType>(delegate() {
+            get_variable_type_container = new OperationCache<DOMEVariableType>("get_variable_type_container", delegate() {
                 return GetVariableTypeConcept().Wrap(IsVariableCollection());
             });
 
-            get_variable_default_name = new OperationCache<string>(delegate() {
+            get_variable_default_name = new OperationCache<string>("get_variable_default_name", delegate() {
                 IndexSituation index_situation = this.GetVariableContextIndexSituation();
                 string context_default_variable_name = GetVariableContext().GetContextDefaultVariableName();
 
@@ -70,7 +70,7 @@ namespace DOME
                 return context_default_variable_name;
             });
 
-            get_info_settings = new OperationCache<LookupBackedSet<string, string>>(delegate() {
+            get_info_settings = new OperationCache<LookupBackedSet<string, string>>("get_info_settings", delegate() {
                 return GetInfo().CreateBackedSet(DEFAULT_SETTING_VALUES);
             });
         }

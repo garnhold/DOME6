@@ -15,7 +15,7 @@ namespace DOME
 
         public DOMEVariableTypeConcept_Primitive_NewConstruct(DOMElement_GrammarDefinition g, string n) : base(g, n)
         {
-            get_default_construction_expression = new OperationCache<string>(delegate() {
+            get_default_construction_expression = new OperationCache<string>("get_default_construction_expression", delegate() {
                 return GetStringToTypeExpression("");
             });
         }
