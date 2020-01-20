@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63D4F19A-6038-4D3E-B8C8-AF352AFF401E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DOME6</RootNamespace>
+    <AssemblyName>DOME6</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrunchyBun">
+      <HintPath>..\..\CrunchyBox\CrunchyBun\bin\Release\CrunchyBun.dll</HintPath>
+    </Reference>
+    <Reference Include="CrunchyDough">
+      <HintPath>..\..\CrunchyBox\CrunchyDough\bin\Release\CrunchyDough.dll</HintPath>
+    </Reference>
+    <Reference Include="CrunchyGinger">
+      <HintPath>..\..\CrunchyBox\CrunchyGinger\bin\Release\CrunchyGinger.dll</HintPath>
+    </Reference>
+    <Reference Include="CrunchyLunch">
+      <HintPath>..\..\CrunchyBox\CrunchyLunch\bin\Release\CrunchyLunch.dll</HintPath>
+    </Reference>
+    <Reference Include="CrunchyNoodle">
+      <HintPath>..\..\CrunchyBox\CrunchyNoodle\bin\Release\CrunchyNoodle.dll</HintPath>
+    </Reference>
+    <Reference Include="CrunchySalt">
+      <HintPath>..\..\CrunchyBox\CrunchySalt\bin\Release\CrunchySalt.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Antlr4.Runtime">
+      <HintPath>..\..\CrunchyBox\CrunchyRecipe\bin\Release\Antlr4.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="antlr4\DOMEBaseVisitor.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Element_ManualParent.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Element_NoParent.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Element_AutoParent.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Element.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Helper.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Helper_IParseTreeExtensions.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Helper_Resolver.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Helper_SyntaxExceptionThrower.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_SyntaxException.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generated\DOMEClass_Generated_GrammarElement_Helper_Utilities.cs" />
+    <Compile Include="DOMESettings\DOMESettings.cs" />
+    <Compile Include="antlr4\DOMEContext.cs" />
+    <Compile Include="antlr4\DOMEDOMinator.cs" />
+    <Compile Include="antlr4\DOMElement.cs" />
+    <Compile Include="antlr4\DOMElement_Configuration.cs" />
+    <Compile Include="antlr4\DOMElement_Definition.cs" />
+    <Compile Include="antlr4\DOMElement_Definition_RuleDefinition.cs" />
+    <Compile Include="antlr4\DOMElement_Definition_RuleDefinition_Abstract.cs" />
+    <Compile Include="antlr4\DOMElement_Definition_RuleDefinition_ConcreteDirect.cs" />
+    <Compile Include="antlr4\DOMElement_Definition_RuleDefinition_ConcreteInherited.cs" />
+    <Compile Include="antlr4\DOMElement_Definition_TokenDefinition.cs" />
+    <Compile Include="antlr4\DOMElement_GrammarDefinition.cs" />
+    <Compile Include="antlr4\DOMElement_Quantifier.cs" />
+    <Compile Include="antlr4\DOMElement_RuleAtom_Group.cs" />
+    <Compile Include="antlr4\DOMElement_RuleAtom_Literal.cs" />
+    <Compile Include="antlr4\DOMElement_RuleAtom_Variable.cs" />
+    <Compile Include="antlr4\DOMElement_RuleAtom_Variable_InfoGroup.cs" />
+    <Compile Include="antlr4\DOMElement_RuleAtom_Variable_Reference.cs" />
+    <Compile Include="antlr4\DOMElement_RuleAtom_Variable_Reference_Rule.cs" />
+    <Compile Include="antlr4\DOMElement_RuleAtom_Variable_Reference_Token.cs" />
+    <Compile Include="antlr4\DOMElement_RuleDefinition.cs" />
+    <Compile Include="antlr4\DOMElement_RuleDefinition_Abstract.cs" />
+    <Compile Include="antlr4\DOMElement_RuleDefinition_Concrete.cs" />
+    <Compile Include="antlr4\DOMElement_RuleDefinition_Concrete_Direct.cs" />
+    <Compile Include="antlr4\DOMElement_RuleDefinition_Concrete_Inherited.cs" />
+    <Compile Include="antlr4\DOMElement_RuleReference.cs" />
+    <Compile Include="antlr4\DOMElement_Setting.cs" />
+    <Compile Include="antlr4\DOMElement_Settings.cs" />
+    <Compile Include="antlr4\DOMElement_TokenDefinition.cs" />
+    <Compile Include="antlr4\DOMElement_TokenReference.cs" />
+    <Compile Include="antlr4\DOMELexer.cs" />
+    <Compile Include="DOMENamer\DOMENamer.cs" />
+    <Compile Include="DOMENamer\DOMENamerAttribute.cs" />
+    <Compile Include="DOMENamer\DOMENamer_Explicit.cs" />
+    <Compile Include="DOMENamer\DOMENamer_Implicit.cs" />
+    <Compile Include="antlr4\DOMEParser.cs" />
+    <Compile Include="DOMEClass\DOMEClass.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConcept.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConceptAttribute.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConcept_Primitive\DOMEVariableTypeConcept_Primitive.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConcept_Primitive\DOMEVariableTypeConcept_Primitive_NewConstruct.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConcept_Primitive\DOMEVariableTypeConcept_Primitive_Enum.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConcept_Primitive\DOMEVariableTypeConcept_Primitive_Simple_Parseable.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConcept_Primitive\DOMEVariableTypeConcept_Primitive_Simple.cs" />
+    <Compile Include="DOMEVariableTypeConcept\DOMEVariableTypeConcept_Primitive\DOMEVariableTypeConcept_Primitive_Simple_String.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_ICollection.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_Primitive_List.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_Primitive.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_AutoParent_LabeledItemSet.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_AutoParent_List.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_AutoParent.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_ManualParent_LabeledItemSet.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_ManualParent_List.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_NoParent_LabeledItemSet.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_NoParent_List.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_NoParent.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Multiple\DOMEVariableType_Multiple_RuleDefinition_ManualParent.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Single\DOMEVariableType_Single.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Single\DOMEVariableType_Single_Primitive.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Single\DOMEVariableType_Single_RuleDefinition_AutoParent.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Single\DOMEVariableType_Single_RuleDefinition.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Single\DOMEVariableType_Single_RuleDefinition_NoParent.cs" />
+    <Compile Include="DOMEVariableType\DOMEVariableType_Single\DOMEVariableType_Single_RuleDefinition_ManualParent.cs" />
+    <Compile Include="DOMEVariableTypeCreator\DOMEVariableTypeCreator.cs" />
+    <Compile Include="DOMEVariableTypeCreator\DOMEVariableTypeCreatorAttribute.cs" />
+    <Compile Include="DOMEClass\DOMEClass_Generic.cs" />
+    <Compile Include="DOMEClass\DOMEClass_GrammarElement.cs" />
+    <Compile Include="DOMEVariableTypeConcept\Extensions\DOMEVariableTypeContextExtensions.cs" />
+    <Compile Include="DOMEVariable\DOMEVariable.cs" />
+    <Compile Include="antlr4\DOMEVisitor.cs" />
+    <Compile Include="DOMEVisitTarget\DOMEVisitTarget.cs" />
+    <Compile Include="HasQuantifier.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
