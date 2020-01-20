@@ -54,6 +54,8 @@ namespace DOME
                 code.Write("private int line;");
                 code.Write("private string base_message;");
 
+                code.Write("public override string Message { get{ return GetMessage(); } }");
+
                 code.Write("public ?TYPE(int l, string m) : base()", delegate() {
                     code.Write("line = l;");
                     code.Write("base_message = m;");
