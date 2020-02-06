@@ -63,7 +63,7 @@ namespace DOME
                 IEnumerable<DOMElement_GrammarDefinition> grammars = input.GetGrammarNames()
                     .Convert(n => DOMifyGrammar(n));
 
-                grammars.Convert(g => g.GetDefinitions()).ProcessCopy(d => AddDefinition(d));
+                grammars.Convert(g => g.GetDefinitions()).Flatten().ProcessCopy(d => AddDefinition(d));
             }
         }
 

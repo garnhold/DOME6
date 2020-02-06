@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrunchyBun">
-      <HintPath>..\..\CrunchyBox\CrunchyBun\bin\Release\CrunchyBun.dll</HintPath>
-    </Reference>
     <Reference Include="CrunchyDough">
       <HintPath>..\..\CrunchyBox\CrunchyDough\bin\Release\CrunchyDough.dll</HintPath>
     </Reference>
